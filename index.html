@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 6th Monthsary </title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+
+<body>
+
+  <!-- Floating hearts -->
+  <div class="heart">♡</div>
+  <div class="heart">♥</div>
+  <div class="heart">♡</div>
+  <div class="heart">♥</div>
+  <div class="heart">♡</div>
+
+  <main class="container">
+    <div class="card">
+
+      <div class="small">another month with you</div>
+
+      <h1>Happy 6th Monthsary </h1>
+
+      <p class="subtitle">
+        To my favorite person in the whole world.
+      </p>
+
+      <div class="mini-gallery">
+
+        <div class="mini-photo photo-one">
+          <img src="/BebeIMG/6c5aea63-664f-496f-a130-f362df1d0170.jpg" alt="Our memory 1">
+        </div>
+
+        <div class="mini-photo photo-two">
+          <img src="/BebeIMG/782d7ff5-a189-4525-a5cc-9a820379bc30.jpg" alt="Our memory 2">
+        </div>
+
+        <div class="mini-photo photo-three">
+          <img src="/BebeIMG/ccd52192-08b5-4e08-ab22-19a0ebea0257.jpg" alt="Our memory 3">
+        </div>
+
+      </div>
+
+      <p class="photo-caption">
+        little pieces of us ♡
+      </p>
+
+      <div class="divider"></div>
+
+      <!-- Time together -->
+      <p>We've been together for...</p>
+
+      <div class="counter">
+        <div class="time-box">
+          <span class="number" id="days">0</span>
+          <span class="label">Days</span>
+        </div>
+
+        <div class="time-box">
+          <span class="number" id="hours">0</span>
+          <span class="label">Hours</span>
+        </div>
+
+        <div class="time-box">
+          <span class="number" id="minutes">0</span>
+          <span class="label">Minutes</span>
+        </div>
+
+        <div class="time-box">
+          <span class="number" id="seconds">0</span>
+          <span class="label">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Love letter -->
+      <div class="letter">
+
+        <div class="letter-title">
+          A little letter for you 
+        </div>
+
+        <p>
+          My Baby lynnn,
+        </p>
+
+        <p>
+          Another month has passed, and I'm still so grateful
+          that I get to call you mine. Thank you for all the
+          moments we've shared, the laughs, the conversations, and
+          even the silly/unholy things we do together.
+        </p>
+
+        <p>
+          I hope we continue making beautiful memories,
+          growing together, and choosing each other every day.
+          No matter how much time passes, I hope you always
+          remember how special you are to me. Thank you for staying
+          by my side even when I'm empty, for loving me, and for being the most
+          amazing partner I could ever ask for.
+          I love you so muchhhhhhhhhh
+        </p>
+
+        <p>
+          Here's to another month of us, and hopefully
+          countless more to come.
+        </p>
+
+        <div class="signature">
+          Forever yours,<br>
+          Your Baby
+        </div>
+
+      </div>
+
+      <button onclick="showMessage()">
+        Click for a surprise
+      </button>
+
+      <p id="secret">
+        I love you always and forever, my baby and my everything.
+      </p>
+
+      <div class="footer">
+        made with love, just for you 
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+
+    // CHANGE THIS DATE TO YOUR ANNIVERSARY
+    const startDate = new Date("2026-03-12T18:10:00");
+
+    function updateCounter() {
+
+      const now = new Date();
+      const difference = now - startDate;
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+      );
+      const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+      );
+      const seconds = Math.floor(
+        (difference / 1000) % 60
+      );
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
+
+    function showMessage() {
+      const message = document.getElementById("secret");
+
+      if (message.style.display === "block") {
+        message.style.display = "none";
+      } else {
+        message.style.display = "block";
+      }
+    }
+  
+
+  </script>
+
+</body>
+</html>

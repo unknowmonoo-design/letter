@@ -1,0 +1,316 @@
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fff8fa);
+      color: #b75b7a;
+      overflow-x: hidden;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      color: #f3a6bb;
+      font-size: 20px;
+      animation: float 7s linear infinite;
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 25%; animation-delay: 2s; font-size: 15px; }
+    .heart:nth-child(3) { left: 45%; animation-delay: 4s; }
+    .heart:nth-child(4) { left: 65%; animation-delay: 1s; font-size: 25px; }
+    .heart:nth-child(5) { left: 85%; animation-delay: 3s; }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% { opacity: 0.7; }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Main card */
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 700px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      padding: 45px 35px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(160, 90, 110, 0.15);
+      animation: appear 1.2s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .small {
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c78398;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(45px, 10vw, 75px);
+      font-weight: normal;
+      color: #a75d75;
+      margin: 10px 0;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #9b6c79;
+      margin-bottom: 30px;
+    }
+
+    .divider {
+      width: 70px;
+      height: 2px;
+      background: #e8a9bb;
+      margin: 25px auto;
+    }
+
+    /* Counter */
+    .counter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .time-box {
+      background: #fff7fa;
+      border-radius: 18px;
+      padding: 15px 18px;
+      min-width: 80px;
+      box-shadow: 0 5px 15px rgba(180, 100, 120, 0.08);
+    }
+
+    .number {
+      display: block;
+      font-size: 25px;
+      font-weight: 600;
+      color: #a75d75;
+    }
+
+    .label {
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: #b78694;
+      text-transform: uppercase;
+    }
+
+    /* Letter */
+    .letter {
+      margin-top: 35px;
+      padding: 28px;
+      background: #fff9fb;
+      border-radius: 20px;
+      text-align: left;
+      line-height: 1.9;
+      font-size: 14px;
+      color: #74505c;
+    }
+
+    .letter-title {
+      text-align: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 25px;
+      color: #a75d75;
+      margin-bottom: 15px;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 20px;
+      font-family: 'DM Serif Display', serif;
+      color: #a75d75;
+      font-size: 20px;
+    }
+
+    /* Button */
+    button {
+      margin-top: 30px;
+      padding: 13px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #d987a1;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(190, 100, 130, 0.2);
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      background: #c96f8d;
+    }
+
+    #secret {
+      display: none;
+      margin-top: 20px;
+      color: #a75d75;
+      font-size: 14px;
+      animation: appear 0.7s ease;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #b68b98;
+    }
+
+    .mini-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 30px auto 15px;
+
+  width: 100%;
+}
+
+
+/* Individual Polaroid */
+
+.mini-photo {
+  width: 125px;
+  height: 145px;
+
+  padding: 7px 7px 25px;
+
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 8px 20px rgba(170, 90, 120, 0.18);
+
+  transition: all 0.4s ease;
+
+  cursor: pointer;
+}
+
+
+/* Images */
+
+.mini-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 3px;
+}
+
+
+/* Cute Polaroid rotations */
+
+.photo-one {
+  transform: rotate(-7deg);
+}
+
+.photo-two {
+  transform:
+    translateY(-8px)
+    rotate(2deg);
+
+  z-index: 2;
+}
+
+.photo-three {
+  transform: rotate(7deg);
+}
+
+
+/* Hover */
+
+.mini-photo:hover {
+  transform:
+    translateY(-12px)
+    rotate(0deg)
+    scale(1.08);
+
+  z-index: 5;
+
+  box-shadow:
+    0 15px 30px rgba(170, 90, 120, 0.25);
+}
+
+
+/* Caption */
+
+.photo-caption {
+  margin-top: 15px;
+  margin-bottom: 25px;
+
+  font-family:
+    'DM Serif Display',
+    serif;
+
+  font-size: 18px;
+
+  color: #a75d75;
+
+  text-align: center;
+}
+
+
+
+@media (max-width: 500px) {
+
+  .mini-gallery {
+    gap: 7px;
+  }
+
+  .mini-photo {
+    width: 95px;
+    height: 115px;
+
+    padding: 5px 5px 20px;
+  }
+
+  .photo-caption {
+    font-size: 16px;
+  }
+
+}
